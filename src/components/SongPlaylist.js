@@ -1,6 +1,6 @@
 import { useDispatch, useSelector } from "react-redux";
 import { createRandomSong } from "../data";
-import { addSong, removeSong } from "../store/songSplice";
+import { addSong, removeSong } from "../store/songSlice";
 
 function SongPlaylist() {
   const dispatch = useDispatch();

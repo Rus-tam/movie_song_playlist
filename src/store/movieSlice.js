@@ -11,8 +11,11 @@ const movieSlice = createSlice({
       const index = state.indexOf(action.payload);
       state.splice(index, 1);
     },
+    reset(state, action) {
+      return [];
+    },
   },
 });
 
-export const { addMovie, removeMovie } = movieSlice.actions;
+export const { addMovie, removeMovie, reset } = movieSlice.actions;
 export { movieSlice };
