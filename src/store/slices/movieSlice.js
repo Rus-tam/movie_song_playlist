@@ -1,17 +1,20 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { reset } from "./movieSlice";
+import { reset } from "../actions";
 
-const songSlice = createSlice({
-  name: "song",
+const movieSlice = createSlice({
+  name: "movie",
   initialState: [],
   reducers: {
-    addSong(state, action) {
+    addMovie(state, action) {
       state.push(action.payload);
     },
-    removeSong(state, action) {
+    removeMovie(state, action) {
       const index = state.indexOf(action.payload);
       state.splice(index, 1);
     },
+    // reset(state, action) {
+    //   return [];
+    // },
   },
   extraReducers(builder) {
     builder.addCase(reset, (state, action) => {
@@ -20,6 +23,5 @@ const songSlice = createSlice({
   },
 });
 
-export const { addSong, removeSong } = songSlice.actions;
-
-export { songSlice };
+export const { addMovie, removeMovie } = movieSlice.actions;
+export const moviesReducer = movieSlice.reducer;
